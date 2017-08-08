@@ -55,18 +55,7 @@ public class HotPost extends AppCompatActivity {
         geoQuery.addGeoQueryEventListener(new GeoQueryEventListener() {
             @Override
             public void onKeyEntered(String key, GeoLocation location) {
-                mdatabase.child(key).addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        Info info=new Info();
 
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-
-                    }
-                });
             }
 
             @Override
@@ -81,29 +70,7 @@ public class HotPost extends AppCompatActivity {
 
             @Override
             public void onGeoQueryReady() {
-                FirebaseRecyclerAdapter<Info, PostAct.PostAdapter>FBRA2= new FirebaseRecyclerAdapter<Info, PostAct.PostAdapter>
-                        (Info.class,R.layout.eachpost,PostAct.PostAdapter.class,mdatabase) {
-                    @Override
-                    protected void populateViewHolder(final PostAct.PostAdapter viewHolder, Info model, int position) {
-                        final String post_key=getRef(position).getKey();
-
-
-                        mref.addValueEventListener(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(DataSnapshot dataSnapshot) {
-                                viewHolder.setText2((String) dataSnapshot.child(post_key).child("Posted").getValue());
-                            }
-
-                            @Override
-                            public void onCancelled(DatabaseError databaseError) {
-
-                            }
-                        });
-
-                    }
-
-                };
-                postviews2.setAdapter(FBRA2);
+              
             }
 
             @Override
