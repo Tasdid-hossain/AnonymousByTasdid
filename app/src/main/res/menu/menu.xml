@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/account"
+        android:icon="@drawable/common_full_open_on_phone"
+        app:showAsAction="always"
+        android:onClick="did"
+        android:title=""/>
+    <item android:id="@+id/mid"
+        android:title=""
+        app:showAsAction="always"
+        android:icon="@drawable/text"
+        android:onClick="doing"
+        />
+
+
+
+</menu>
